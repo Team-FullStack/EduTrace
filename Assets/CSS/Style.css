@@ -144,6 +144,9 @@ header::after {
   transform: translateY(-3px) rotate(-90deg);
 }
 
+.container{
+border-bottom: 1px solid ;
+}
 /* first section */
 
 /* media queries */
