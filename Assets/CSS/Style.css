@@ -3,6 +3,7 @@
 :root {
   --main-white-color: #ffffff;
   --main-blue-color: #2279d4;
+  --main-lightblue-color: #86b5e8;
   --main-black-color: #232526;
   --main-darkgrey-color: #545a61;
   --main-lightgrey-color: rgba(68, 73, 79, 0.4);
@@ -243,6 +244,7 @@ header::after {
   font-weight: 600;
 }
 
+/* section2 */
 .section2__text__tittle {
   max-width: 800px;
   text-align: center;
@@ -264,6 +266,53 @@ header::after {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* measuresection */
+.measuresection{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 25px;
+}
+
+.measuresection__text{
+  width: 570px;
+}
+
+.measuresection__text__heading::before {
+  content: '';
+  width: 180px;
+  height: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid var(--main-lightblue-color);
+  background-color: var(--main-lightblue-color);
+}
+
+.measuresection__text__heading span{
+  color: var(--main-lightblue-color);
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.measuresection__text__tittle{
+  font-size: 2rem;
+  margin: 20px 10px 10px 0px;
+  max-width: 400px;
+}
+
+.measuresection__text__description{
+  max-width: 400px;
+}
+
+.measuresection__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.measuresection__image img{
+  width: 100%;
 }
 
 /* media queries */
@@ -340,8 +389,33 @@ header::after {
   .hero-img img {
     width: 100%;
   }
+
+  /* section2 media queries */
   .section2__img img {
     width: 100%;
+  }
+}
+
+@media (max-width: 700px){
+  /* measuresection media queries */
+
+  .measuresection__text__heading::before{
+    width: 100px;
+    height: 0.25px;
+  }
+
+  .measuresection__text__heading span{
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+  .measuresection__text__tittle{
+    font-size: 1.25rem;
+    margin-top: 10px;
+  }
+
+  .measuresection__text__description{
+    font-size: small;
   }
 }
 
@@ -367,7 +441,24 @@ header::after {
     width: 100%;
   }
 
+  /* section2 media queries */
   .section2__text__tittle h2 {
     font-size: 20px;
   }
+
+  /* measuresection media queries */
+  .measuresection{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .measuresection__text__tittle{
+    font-size: 1.5rem;
+  }
+
+  .measuresection__text__description{
+    font-size: small;
+    margin: 10px 0px 30px 0px;
+  }
+
 }
