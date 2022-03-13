@@ -4,12 +4,16 @@
   --main-white-color: #ffffff;
   --main-blue-color: #2279d4;
   --main-lightblue-color: #86b5e8;
-  --feature-background-color:rgb(62, 102, 138,0.1);
+  --feature-background-color: rgb(62, 102, 138, 0.1);
   --main-black-color: #232526;
   --main-darkgrey-color: #545a61;
   --main-lightgrey-color: rgba(68, 73, 79, 0.514);
   --secondary-orange-color: #ff8b18;
   --secondary-green-color: #4baf50;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -222,6 +226,9 @@ header {
 }
 
 /* section2 */
+.section2 {
+  margin-top: 100px;
+}
 .section2__text__tittle {
   max-width: 800px;
   text-align: center;
@@ -253,7 +260,7 @@ header {
 .measuresection {
   display: flex;
   justify-content: space-between;
-  margin: 50px 25px;
+  margin: 100px 25px;
 }
 
 .measuresection__text {
@@ -297,9 +304,13 @@ header {
 }
 
 /* steps section */
+.stepssection {
+  margin-top: 100px;
+}
+
 .stepssection__title {
   text-align: center;
-  font-size: 34px;
+  font-size: 36px;
   color: var(--main-black-color);
 }
 
@@ -319,12 +330,13 @@ header {
 .step1__number {
   grid-column: secondcol;
   grid-row: 1/2;
+  height: 80px;
 }
 
 .step1__title {
   grid-column: secondcol;
   grid-row: 2/3;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--main-black-color);
 }
 
@@ -398,12 +410,13 @@ header {
 .step2__number {
   grid-column: 1;
   grid-row: 1;
+  height: 80px;
 }
 
 .step2__title {
   grid-column: 1;
   grid-row: 2;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--main-black-color);
 }
 
@@ -439,12 +452,13 @@ header {
 .step3__number {
   grid-column: secondcol;
   grid-row: 1/2;
+  height: 80px;
 }
 
 .step3__title {
   grid-column: secondcol;
   grid-row: 2/3;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--main-black-color);
 }
 
@@ -486,35 +500,37 @@ header {
 
 /* feature section */
 
-.parentfeature{
+.parentfeature {
   background-color: var(--feature-background-color);
   padding: 10px;
 }
 
-.featuresection{
+.featuresection {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
   gap: 10px;
 }
 
-.featuresection__top,.featuresection__bottom{
+.featuresection__top,
+.featuresection__bottom {
   display: flex;
   gap: 10px;
 }
 
-.featuresection > div{
+.featuresection > div {
   flex: 1;
 }
 
-.featuresection__top > div,.featuresection__bottom > div{
+.featuresection__top > div,
+.featuresection__bottom > div {
   flex: 1;
 }
 
-.featuresection img,h4{
+.featuresection img,
+h4 {
   margin-bottom: 15px;
 }
-
 
 /* media queries */
 @media (max-width: 900px) {
@@ -714,16 +730,14 @@ header {
     width: 80%;
   }
 
-/* feature section media queries */
+  /* feature section media queries */
 
-  .featuresection{
+  .featuresection {
     flex-direction: column;
     text-align: center;
     gap: 40px;
   }
-
 }
-
 
 @media (max-width: 700px) {
   /* measuresection media queries */
@@ -749,6 +763,14 @@ header {
 
   .measuresection__text__description {
     font-size: small;
+  }
+
+  .step1__number,
+  .step2__number,
+  .step3__number {
+    height: 60px;
+    align-self: end;
+    margin-bottom: 5px;
   }
 }
 
@@ -795,6 +817,9 @@ header {
   }
 
   /* step section */
+  .stepssection__title {
+    font-size: 30px;
+  }
 
   .step1 {
     display: grid;
@@ -843,10 +868,18 @@ header {
     grid-row: 4;
   }
 
-/* feature section media queries */
+  /* feature section media queries */
 
-  .featuresection__top,.featuresection__bottom{
+  .featuresection,
+  .featuresection__top,
+  .featuresection__bottom {
     flex-direction: column;
-    gap: 40px;
+    gap: 80px;
+  }
+
+  .featuresection__top > *,
+  .featuresection__bottom > * {
+    width: 80%;
+    margin: auto;
   }
 }
