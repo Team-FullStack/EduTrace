@@ -17,6 +17,6 @@ nav_links.forEach((nav_link) => {
     site_nav.classList.remove("site-nav--open");
     nav_container.classList.remove("nav-container--open");
     //   $(this).toggleClass("open");
-    this.classList.remove("open");
+    menu_toggle.classList.remove("open");
   });
 });
