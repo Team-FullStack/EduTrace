@@ -20,3 +20,18 @@ nav_links.forEach((nav_link) => {
     menu_toggle.classList.remove("open");
   });
 });
+
+function initMap() {
+  // The location of pune
+  const pune = { lat: 18.52043, lng: 73.856743 };
+  // The map, centered at pune
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: pune,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: pune,
+    map: map,
+  });
+}
