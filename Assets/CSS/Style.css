@@ -536,7 +536,7 @@ h4 {
 /* newsletter section */
 .newsletter {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1140px;
   margin: 0 auto 150px auto;
   display: flex;
   flex-direction: column;
@@ -595,6 +595,173 @@ h4 {
 
 .newsletter_email button:hover {
   background-color: #1f6fc5;
+}
+
+/* form section */
+
+.getintouch {
+  color: var(--main-black-color);
+  max-width: 1140px;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 30px 20px;
+  box-shadow: 2px 10px 28px rgba(1, 9, 83, 0.12);
+  border-radius: 10px;
+}
+
+.getintouch__title {
+  color: var(--main-blue-color);
+  text-align: center;
+}
+
+.getintouch__form__title {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.underline {
+  height: 3px;
+  max-width: 200px;
+  margin: auto;
+  background-color: var(--main-blue-color);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.getintouch__formcontainer {
+  display: flex;
+  gap: 30px;
+}
+
+.getintouch__formcontainer > * {
+  flex: 1;
+}
+
+.getintouch__inputs {
+  width: 100%;
+  margin: 0 0 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  resize: vertical;
+  background: #fff;
+  outline: none;
+}
+.getintouch__inputs:focus {
+  border-color: var(--main-blue-color);
+}
+.getintouch__inputs[required]:focus + label[placeholder]:before {
+  color: var(--main-blue-color);
+}
+.getintouch__inputs--name[required]:focus + label[placeholder]:before,
+.getintouch__inputs--name[required]:valid + label[placeholder]:before,
+.getintouch__inputs--email[required]:focus + label[placeholder]:before,
+.getintouch__inputs--email[required]:valid + label[placeholder]:before {
+  transition-duration: 0.2s;
+  transform: translate(0, -1em) scale(0.9, 0.9);
+}
+.getintouch__inputs[required]:invalid + label[placeholder][alt]:before {
+  transition-duration: 0.2s;
+  transform: translate(0, -1em) scale(0.9, 0.9);
+}
+.getintouch__inputs[required] + label[placeholder] {
+  display: block;
+  pointer-events: none;
+  line-height: 1.25em;
+  margin-top: calc(-3em - 2px);
+  margin-bottom: calc((3em - 1em) + 2px);
+}
+.getintouch__inputs[required] + label[placeholder]:before {
+  content: attr(placeholder);
+  display: inline-block;
+  padding: 0 2px;
+  color: #898989;
+  white-space: nowrap;
+  transition: 0.3s ease-in-out;
+  background-image: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+  background-size: 100% 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#message[rows]:focus + label[placeholder]:before,
+#message[rows]:valid + label[placeholder][alt]:before {
+  transition: display 0.2s ease-in-out;
+  transform: translate(0, -6.3em) scale(0.9, 0.9);
+}
+
+#message[rows]:invalid + label[placeholder][alt]:before {
+  transition: display 0.2s ease-in-out;
+  transform: translate(0, -6.3em) scale(0.9, 0.9);
+}
+
+.getintouch__submit {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: 1px solid var(--main-blue-color);
+  background-color: var(--main-blue-color);
+  color: var(--main-white-color);
+  font-weight: 500;
+}
+
+.getintouch__submit:hover {
+  background-color: #1f6fc5;
+}
+
+.adress,
+.phone,
+.mail {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.socialmedia {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 13px;
+}
+
+#map {
+  height: 200px;
+  width: 100%;
+}
+
+/* footer section */
+.footer {
+  background-color: var(--main-white-color);
+  width: 95%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 0;
+  border-top: 2px solid rgb(230, 230, 230);
+}
+
+.site-footer {
+  flex: 1;
+}
+
+.site-footer ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 1.5em;
+}
+
+.site-footer a {
+  color: var(--main-lightgrey-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--main-darkgrey-color);
 }
 
 /* media queries */
@@ -862,6 +1029,16 @@ h4 {
   .newsletter_email button {
     padding: 8px 16px;
   }
+
+  /* form section */
+  .getintouch__formcontainer {
+    flex-direction: column;
+  }
+
+  /* footer section */
+  .footer {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 500px) {
@@ -976,5 +1153,13 @@ h4 {
   /* newsletter section */
   .newsletter h2 {
     font-size: 20px;
+  }
+
+  /* footer section */
+  .site-footer ul {
+    gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
