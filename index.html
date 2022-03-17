@@ -231,13 +231,13 @@
       <div class="underline"></div>
       <div class="getintouch__formcontainer">
       <div class="getintouch__form">
-        <h2 class="getintouch__form__title">Leave us a message</h2>
-        <form action="post">
-          <input class="getintouch__inputs getintouch__inputs--name" required='' type='text'>
+        <div class="getintouch__form__title info " id="alert"><div class="start">&nbsp;</div> <p>Leave us a message</p></div>
+        <form novalidate id="contactForm" action="" method="post">
+          <input id="name" name="name" class="getintouch__inputs getintouch__inputs--name"  type='text'>
           <label alt='Name' placeholder='Name'></label>
-          <input class="getintouch__inputs getintouch__inputs--email" required='' type='email'>
+          <input id="email" name="email" class="getintouch__inputs getintouch__inputs--email"  type='email'>
           <label alt='email' placeholder='email'></label>
-          <textarea rows="6" class="getintouch__inputs getintouch__inputs--message" id="message" required='' type="textarea"  ></textarea>
+          <textarea style="resize: none;" id="message" name="message" rows="6" class="getintouch__inputs getintouch__inputs--message" type="textarea"  ></textarea>
           <label alt='Message' placeholder='Message'></label>
           <button type="submit" class="getintouch__submit" >Send</button>
         </form>

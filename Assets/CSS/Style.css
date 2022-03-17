@@ -615,9 +615,67 @@ h4 {
   text-align: center;
 }
 
-.getintouch__form__title {
+.info {
+  width: 100%;
+  background-color: #e5f6fd;
+  color: #014361;
+  font-size: 16px;
   font-weight: 400;
+  height: 30px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.info .start {
+  width: 6px;
+  background-color: #3cbcf6;
+  height: 100%;
+  display: inline-block;
+}
+
+.error {
+  width: 100%;
+  background-color: #fdeded;
+  color: #5f2120;
+  font-size: 16px;
+  font-weight: 400;
+  height: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.error .start {
+  width: 6px;
+  background-color: #f16461;
+  height: 100%;
+  display: inline-block;
+}
+
+.success {
+  width: 100%;
+  background-color: #edf7ed;
+  color: #1e4620;
+  font-size: 16px;
+  font-weight: 400;
+  height: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.success .start {
+  width: 6px;
+  background-color: #6cbd70;
+  height: 100%;
+  display: inline-block;
 }
 
 .underline {
@@ -650,28 +708,32 @@ h4 {
 .getintouch__inputs:focus {
   border-color: var(--main-blue-color);
 }
-.getintouch__inputs[required]:focus + label[placeholder]:before {
+.getintouch__inputs:focus + label[placeholder]:before {
   color: var(--main-blue-color);
 }
-.getintouch__inputs--name[required]:focus + label[placeholder]:before,
-.getintouch__inputs--name[required]:valid + label[placeholder]:before,
-.getintouch__inputs--email[required]:focus + label[placeholder]:before,
-.getintouch__inputs--email[required]:valid + label[placeholder]:before {
+
+.getintouch__inputs + label.danger[placeholder]:before {
+  color: red;
+}
+.getintouch__inputs--name:focus + label[placeholder]:before,
+.getintouch__inputs--name:valid + label[placeholder]:before,
+.getintouch__inputs--email:focus + label[placeholder]:before,
+.getintouch__inputs--email:valid + label[placeholder]:before {
   transition-duration: 0.2s;
   transform: translate(0, -1em) scale(0.9, 0.9);
 }
-.getintouch__inputs[required]:invalid + label[placeholder][alt]:before {
+.getintouch__inputs:invalid + label[placeholder][alt]:before {
   transition-duration: 0.2s;
   transform: translate(0, -1em) scale(0.9, 0.9);
 }
-.getintouch__inputs[required] + label[placeholder] {
+.getintouch__inputs + label[placeholder] {
   display: block;
   pointer-events: none;
   line-height: 1.25em;
   margin-top: calc(-3em - 2px);
   margin-bottom: calc((3em - 1em) + 2px);
 }
-.getintouch__inputs[required] + label[placeholder]:before {
+.getintouch__inputs + label[placeholder]:before {
   content: attr(placeholder);
   display: inline-block;
   padding: 0 2px;
