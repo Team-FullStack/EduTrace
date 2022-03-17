@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="Assets/CSS/Style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -63,7 +65,7 @@
               alt="Background image"
             />
           </div>
-          <div class="hero-text">
+          <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
             <h1 class="hero-text-title">
               Outline your education and align career target
             </h1>
@@ -77,30 +79,12 @@
               </button>
             </div>
           </div>
-          <div class="hero-img">
+          <div class="hero-img" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="1000">
             <img
               src="Assets/Images/hero-img.svg"
               alt="Outline your education Image"
             />
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- second section -->
-
-    <div class="container">
-      <div class="section2">
-        <div class="section2__text">
-          <h2 class="section2__text__tittle">
-            One dashboard for your Studies analytics and reporting
-          </h2>
-          <p class="section2__text__description">
-            Track performance and create reports for various subjects - all from
-            one intuitive analytics dashboard
-          </p>
-        </div>
-        <div class="section2__img">
-          <img src="Assets/Images/banner-img 1.png" alt="dashboard image" />
         </div>
       </div>
     </div>
@@ -128,7 +112,7 @@
               <i class="fa-regular fa-circle-down"></i> Download Sample
             </button>
           </div>
-          <div class="step1__image">
+          <div class="step1__image"  data-aos="fade-right" data-aos-duration="2000">
             <img src="Assets/Images/step1_img.svg" alt="step1 image" />
           </div>
         </div>
@@ -139,7 +123,7 @@
           <p class="step2__description">
             The shared data is processed through our extensively trained AI ML based model which identifies the good and improvement areas.
           </p>
-          <div class="step2__image">
+          <div class="step2__image" data-aos="fade-left" data-aos-duration="2000">
             <img src="Assets/Images/step2_img.svg" alt="step2 image" />
           </div>
         </div>
@@ -161,9 +145,27 @@
               <i class="fa-solid fa-circle-down"></i> Download Sample
             </a>
           </div>
-          <div class="step3__image">
+          <div class="step3__image" data-aos="fade-right" data-aos-duration="2000">
             <img src="Assets/Images/step3_img.svg" alt="step3 image" />
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- dashboard section -->
+    <div class="container">
+      <div class="section2">
+        <div class="section2__text" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0">
+          <h2 class="section2__text__tittle">
+            One dashboard for your Studies analytics and reporting
+          </h2>
+          <p class="section2__text__description">
+            Track performance and create reports for various subjects - all from
+            one intuitive analytics dashboard
+          </p>
+        </div>
+        <div class="section2__img" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+          <img src="Assets/Images/banner-img 1.png" alt="dashboard image" />
         </div>
       </div>
     </div>
@@ -172,11 +174,11 @@
       <div class="container" >
         <div class="measuresection" id="features">
             <div class="measuresection__text">
-              <h4 class="measuresection__text__heading"><span>MEASURE</span></h4>
+              <h4 class="measuresection__text__heading" data-aos="fade-right" data-aos-duration="2000"><span>MEASURE</span></h4>
               <h2 class="measuresection__text__tittle">Measure & analyze the performance of your child</h2>
               <div class="measuresection__text__description">Get a broad understanding of childs performance, and in-depth insights into specific institutions around you</div>
             </div>
-            <div class="measuresection__image">
+            <div class="measuresection__image" data-aos="fade-left" data-aos-duration="2050">
               <img src="Assets/Images/Measure-image.png" alt="datapic">
             </div>
         </div>
@@ -306,5 +308,9 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDamfG1gZZYxKzXQyUI6QU1LTSYO_UUgSc&callback=initMap&v=weekly&channel=2"
     async
   ></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
