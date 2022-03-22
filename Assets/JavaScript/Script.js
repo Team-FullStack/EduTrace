@@ -1,6 +1,7 @@
 const menu_toggle = document.querySelector(".menu-toggle");
 const site_nav = document.querySelector(".site-nav");
 const nav_container = document.querySelector(".nav-container");
+const header = document.querySelector("header");
 
 const nav_links = document.querySelectorAll(".site-nav a");
 
@@ -16,10 +17,12 @@ const message_label = document.querySelector("#message + label");
 
 // hamburger toggle
 menu_toggle.addEventListener("click", function () {
+  console.log("nav clicked");
   site_nav.classList.toggle("site-nav--open");
   nav_container.classList.toggle("nav-container--open");
   //   $(this).toggleClass("open");
   this.classList.toggle("open");
+  header.classList.toggle("header--open");
 });
 
 nav_links.forEach((nav_link) => {
@@ -99,3 +102,64 @@ function showmessage(msg, type) {
 
   alert.innerHTML = `<div class="start">&nbsp;</div> <p>${msg}</p>`;
 }
+
+// (function () {
+//   "use strict";
+
+//   var section = document.querySelectorAll(".section");
+//   var sections = {};
+//   var i = 0;
+
+//   Array.prototype.forEach.call(section, function (e) {
+//     sections[e.id] = e.offsetTop;
+//   });
+
+//   console.log(sections);
+//   window.onscroll = function () {
+//     var scrollPosition =
+//       document.documentElement.scrollTop || document.body.scrollTop;
+
+//     // for (let i in sections) {
+//     //   if (sections[i] <= scrollPosition) {
+//     //     document.querySelector(".active").setAttribute("class", " ");
+//     //     document
+//     //       .querySelector("a[href*=" + i + "]")
+//     //       .setAttribute("class", "active");
+//     //   }
+//     // }
+
+//     let key = Object.keys(sections);
+//     let val = Object.values(sections);
+
+//     for (let i = 0; i < val.length; i++) {
+//       if (val[i] <= scrollPosition) {
+//         document.querySelector(".active").setAttribute("class", " ");
+//         console.log(`a[href = "#${key[i]}"]`);
+//         document.querySelector(`#${key[i]}`).setAttribute("class", "active");
+//       }
+//     }
+//   };
+// })();
+
+let section = document.querySelectorAll(".section");
+let links = document.querySelectorAll("header nav a");
+
+window.onscroll = () => {
+  section.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
+
+    console.log(sec.offsetTop);
+
+    if (top >= offset && top < offset + height) {
+      links.forEach((singlelink) => {
+        singlelink.classList.remove("active");
+        document
+          .querySelector("nav ul li a[href*=" + id + "]")
+          .classList.add("active");
+      });
+    }
+  });
+};
