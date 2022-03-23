@@ -1,0 +1,133 @@
+.Motion {
+	transform-box: fill-box;
+	transform-origin: 50% 50%
+}
+.Childs_growth_card {
+	animation: 3s linear 0s 1 normal forwards running Childs_growth_card;
+	transform-box: fill-box;
+	transform-origin: 50% 50%
+}
+@keyframes Childs_growth_card {
+	0% {
+		opacity: 0;
+		transform: translateX(0px) translateY(0px);
+		width: 36.98px;
+		height: 45.42px;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(210.51px) translateY(276.28999999999996px);
+		width: 201px;
+		height: 250px;
+	}
+	66.67% {
+		opacity: 0;
+		transform: translateX(265px) translateY(-315px);
+		width: 36.98px;
+		height: 45.42px;
+	}
+	33.33% {
+		transform: translateX(-266px) translateY(0px);
+		width: 36.98px;
+		height: 45.42px;
+	}
+}
+.Detailed_analysis_card {
+	animation: 3s linear 0s 1 normal forwards running Detailed_analysis_card;
+	transform-box: fill-box;
+	transform-origin: 50% 50%
+}
+@keyframes Detailed_analysis_card {
+	0% {
+		opacity: 0;
+		transform: translateX(0px) translateY(0px);
+		width: 43px;
+		height: 70.08px;
+	}
+	33.33% {
+		opacity: 0;
+		transform: translateX(-259px) translateY(0px);
+		width: 43px;
+		height: 70.08px;
+	}
+	66.67% {
+		opacity: 1;
+		transform: translateX(139.5px) translateY(-467.04px);
+		width: 201px;
+		height: 248px;
+	}
+}
+.Ereport_card_card {
+	animation: 3s linear 0s 1 normal forwards running Ereport_card_card;
+	transform-box: fill-box;
+	transform-origin: 50% 50%
+}
+@keyframes Ereport_card_card {
+	0% {
+		opacity: 0;
+		transform: translateX(0px) translateY(0px);
+		width: 55.35px;
+		height: 68.65px;
+	}
+	33.33% {
+		opacity: 1;
+		transform: translateX(-254.9px) translateY(-66.32999999999998px);
+		width: 201.55px;
+		height: 249.97px;
+	}
+}
+.left_arrow {
+	animation: 3s linear 0s 1 normal forwards running left_arrow;
+	transform-box: fill-box;
+	transform-origin: 50% 50%
+}
+@keyframes left_arrow {
+	0% {
+		opacity: 0;
+		transform: translateX(0px) translateY(0px);
+		width: 52.58px;
+		height: 49.93px;
+	}
+	33.33% {
+		opacity: 0;
+		transform: translateX(-261px) translateY(0px);
+		width: 52.58px;
+		height: 49.93px;
+	}
+	66.67% {
+		opacity: 1;
+		transform: translateX(-10.290000000000006px) translateY(-326.97px);
+		width: 114.99px;
+		height: 109.19px;
+	}
+}
+.Right_arrow {
+	animation: 3s linear 0s 1 normal forwards running Right_arrow;
+	transform-box: fill-box;
+	transform-origin: 50% 50%
+}
+@keyframes Right_arrow {
+	0% {
+		opacity: 0;
+		transform: translateX(0px) translateY(0px);
+		width: 49.42px;
+		height: 46.93px;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(155.29000000000002px) translateY(42.03px);
+		width: 114px;
+		height: 109px;
+	}
+	66.67% {
+		opacity: 0;
+		transform: translateX(287px) translateY(-320px);
+		width: 49.42px;
+		height: 46.93px;
+	}
+	33.33% {
+		transform: translateX(-272px) translateY(-62px);
+		width: 49.42px;
+		height: 46.93px;
+	}
+}

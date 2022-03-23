@@ -15,9 +15,17 @@ const name_label = document.querySelector("#name + label");
 const email_label = document.querySelector("#email + label");
 const message_label = document.querySelector("#message + label");
 
+// document.onclick = function (e) {
+//   console.log(e.target.classList);
+//   if (e.target.id != "nav_container") {
+//     site_nav.classList.remove("site-nav--open");
+//     nav_container.classList.remove("nav-container--open");
+//     menu_toggle.classList.remove("open");
+//   }
+// };
+
 // hamburger toggle
 menu_toggle.addEventListener("click", function () {
-  console.log("nav clicked");
   site_nav.classList.toggle("site-nav--open");
   nav_container.classList.toggle("nav-container--open");
   //   $(this).toggleClass("open");
@@ -33,6 +41,13 @@ nav_links.forEach((nav_link) => {
     menu_toggle.classList.remove("open");
   });
 });
+
+function hasClass(el, cl) {
+  return el.classList
+    ? el.classList.contains(cl)
+    : !!el.className &&
+        !!el.className.match(new RegExp("(?: |^)" + cl + "(?: |$)"));
+}
 
 // contact form google maps
 function initMap() {
@@ -103,44 +118,6 @@ function showmessage(msg, type) {
   alert.innerHTML = `<div class="start">&nbsp;</div> <p>${msg}</p>`;
 }
 
-// (function () {
-//   "use strict";
-
-//   var section = document.querySelectorAll(".section");
-//   var sections = {};
-//   var i = 0;
-
-//   Array.prototype.forEach.call(section, function (e) {
-//     sections[e.id] = e.offsetTop;
-//   });
-
-//   console.log(sections);
-//   window.onscroll = function () {
-//     var scrollPosition =
-//       document.documentElement.scrollTop || document.body.scrollTop;
-
-//     // for (let i in sections) {
-//     //   if (sections[i] <= scrollPosition) {
-//     //     document.querySelector(".active").setAttribute("class", " ");
-//     //     document
-//     //       .querySelector("a[href*=" + i + "]")
-//     //       .setAttribute("class", "active");
-//     //   }
-//     // }
-
-//     let key = Object.keys(sections);
-//     let val = Object.values(sections);
-
-//     for (let i = 0; i < val.length; i++) {
-//       if (val[i] <= scrollPosition) {
-//         document.querySelector(".active").setAttribute("class", " ");
-//         console.log(`a[href = "#${key[i]}"]`);
-//         document.querySelector(`#${key[i]}`).setAttribute("class", "active");
-//       }
-//     }
-//   };
-// })();
-
 let section = document.querySelectorAll(".section");
 let links = document.querySelectorAll("header nav a");
 
@@ -150,8 +127,6 @@ window.onscroll = () => {
     let offset = sec.offsetTop - 150;
     let height = sec.offsetHeight;
     let id = sec.getAttribute("id");
-
-    console.log(sec.offsetTop);
 
     if (top >= offset && top < offset + height) {
       links.forEach((singlelink) => {
