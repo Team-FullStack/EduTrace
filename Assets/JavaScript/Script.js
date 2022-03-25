@@ -5,11 +5,16 @@ const header = document.querySelector("header");
 
 const nav_links = document.querySelectorAll(".site-nav a");
 
-const contactrForm = document.getElementById("contactForm");
+const newsletterURL =
+  "https://script.google.com/macros/s/AKfycbxCnNUNxTcK6gknPpHBKlMQwih-9bp491-UwOvm54_CB9SuQjumnxrV2ciXNUMQ_izhiw/exec";
+const contactURL =
+  "https://script.google.com/macros/s/AKfycbykyZSPF6qFC9_EcRYTR-oNhl2BLwHMU-MRqef3gkNtIYYxmWkwzJ_nlD2i49aUdD4Rzw/exec";
+const newsletterForm = document.forms["newsletterForm"];
+const contactForm = document.forms["contactForm"];
 const name = document.getElementById("name");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
-const alert = document.getElementById("alert");
+const alertbox = document.getElementById("alertbox");
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const name_label = document.querySelector("#name + label");
 const email_label = document.querySelector("#email + label");
@@ -23,6 +28,13 @@ const message_label = document.querySelector("#message + label");
 //     menu_toggle.classList.remove("open");
 //   }
 // };
+
+// function hasClass(el, cl) {
+//   return el.classList
+//     ? el.classList.contains(cl)
+//     : !!el.className &&
+//         !!el.className.match(new RegExp("(?: |^)" + cl + "(?: |$)"));
+// }
 
 // hamburger toggle
 menu_toggle.addEventListener("click", function () {
@@ -42,13 +54,6 @@ nav_links.forEach((nav_link) => {
   });
 });
 
-function hasClass(el, cl) {
-  return el.classList
-    ? el.classList.contains(cl)
-    : !!el.className &&
-        !!el.className.match(new RegExp("(?: |^)" + cl + "(?: |$)"));
-}
-
 // contact form google maps
 function initMap() {
   // The location of pune
@@ -65,9 +70,21 @@ function initMap() {
   });
 }
 
-// contact form vaildation
+// newsletter form
+newsletterForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(newsletterURL, { method: "POST", body: new FormData(newsletterForm) })
+    .then((response) =>
+      alert(
+        "Thank you for contacting! We will get back to you soon on your contact email ID."
+      )
+    )
+    .catch((error) => console.error(error.message));
+  document.getElementById("newsletterForm").reset();
+});
 
-contactrForm.addEventListener("submit", (e) => {
+// contact form vaildation
+contactForm.addEventListener("submit", (e) => {
   name.style.borderColor = "#2279d4";
   name_label.classList.remove("danger");
   email.style.borderColor = "#2279d4";
@@ -96,28 +113,35 @@ contactrForm.addEventListener("submit", (e) => {
     message_label.classList.add("danger");
     showmessage("We would like to hear your message", "error");
   } else {
-    showmessage("Message sent successfully", "success");
+    e.preventDefault();
+    fetch(contactURL, { method: "POST", body: new FormData(contactForm) })
+      .then((response) => showmessage("Message sent successfully", "success"))
+      .catch((error) => {
+        showmessage(error.message, "error");
+      });
+    document.getElementById("contactForm").reset();
   }
 });
 
 function showmessage(msg, type) {
   if (type == "info") {
-    alert.classList.remove("success");
-    alert.classList.remove("error");
-    alert.classList.add("info");
+    alertbox.classList.remove("success");
+    alertbox.classList.remove("error");
+    alertbox.classList.add("info");
   } else if (type == "success") {
-    alert.classList.remove("info");
-    alert.classList.remove("error");
-    alert.classList.add("success");
+    alertbox.classList.remove("info");
+    alertbox.classList.remove("error");
+    alertbox.classList.add("success");
   } else if (type == "error") {
-    alert.classList.remove("success");
-    alert.classList.remove("info");
-    alert.classList.add("error");
+    alertbox.classList.remove("success");
+    alertbox.classList.remove("info");
+    alertbox.classList.add("error");
   }
 
-  alert.innerHTML = `<div class="start">&nbsp;</div> <p>${msg}</p>`;
+  alertbox.innerHTML = `<div class="start">&nbsp;</div> <p>${msg}</p>`;
 }
 
+// cuurent navigation
 let section = document.querySelectorAll(".section");
 let links = document.querySelectorAll("header nav a");
 
