@@ -271,6 +271,7 @@ header {
 }
 
 .section2__backgroundcircles {
+  z-index: -10;
   position: absolute;
   border: 1px dashed rgba(148, 149, 150, 0.514);
   width: 800px;
@@ -349,6 +350,23 @@ header {
   to {
     transform: rotate(360deg);
   }
+}
+
+.dashboard__buttons-container{
+  margin: 5px auto 15px auto;
+  width: fit-content;
+}
+
+
+
+.dashboard__button{
+  background-color: var(--main-blue-color);
+  color: var(--main-white-color);
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--main-blue-color);
+  font-size: 20px;
+  font-weight: 600;
 }
 
 /* measuresection */
@@ -441,6 +459,12 @@ header {
   color: var(--main-lightgrey-color);
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+.step1__description li{
+  color: var(--main-lightgrey-color);
+  font-weight: 500;
+ list-style-position: inside;
 }
 
 .step1__image {

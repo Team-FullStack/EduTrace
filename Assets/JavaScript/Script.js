@@ -40,7 +40,7 @@ const message_label = document.querySelector("#message + label");
 menu_toggle.addEventListener("click", function () {
   site_nav.classList.toggle("site-nav--open");
   nav_container.classList.toggle("nav-container--open");
-  //   $(this).toggleClass("open");
+  // $(this).toggleClass("open");
   this.classList.toggle("open");
   header.classList.toggle("header--open");
 });
@@ -142,7 +142,7 @@ function showmessage(msg, type) {
 }
 
 // cuurent navigation
-let section = document.querySelectorAll(".section");
+let section = document.querySelectorAll("  .section");
 let links = document.querySelectorAll("header nav a");
 
 window.onscroll = () => {
